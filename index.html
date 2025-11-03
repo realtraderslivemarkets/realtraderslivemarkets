@@ -850,38 +850,251 @@ h2.section-title {
 <script>
 const newsData = [
   {
-    id:"usd-cpi",
+    id:"chf-cpi",
+    currency:"CHF",
+    flag:"",
+    event:"Consumer Price Index (CPI) m/m",
+    impact:"High",
+    description:"Measures the monthly change in consumer prices in Switzerland. A lower CPI may weaken CHF, while a higher reading could strengthen it.",
+    forecast:"-0.1%",
+    datetime:"2025-11-03T07:30:00Z",
+    affectedPairs:["EUR/CHF","USD/CHF","GBP/CHF","CHF/JPY","XAU/CHF"]
+},
+{
+    id:"usd-ism-pmi",
     currency:"USD",
     flag:"",
-    event:"Consumer Price Index (CPI)",
+    event:"ISM Manufacturing PMI",
     impact:"High",
-    description:"Measures changes in the price level of consumer goods and services.",
-    forecast:"3.5%",
-    datetime:"2025-11-01T14:30:00Z",
+    description:"Measures the activity level of purchasing managers in the manufacturing sector. A reading above 50 indicates expansion, while below 50 signals contraction.",
+    forecast:"49.4",
+    datetime:"2025-11-03T15:00:00Z",
     affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
-  },
-  {
-    id:"eur-ecb",
-    currency:"EUR",
+},
+{
+    id:"cad-boc-speech",
+    currency:"CAD",
     flag:"",
-    event:"ECB Interest Rate Decision",
+    event:"BOC Gov Macklem Speaks",
     impact:"High",
-    description:"ECB announces its decision on interest rates and monetary policy statement.",
-    forecast:"4.00%",
-    datetime:"2025-11-05T12:45:00Z",
-    affectedPairs:["EUR/USD","EUR/JPY","EUR/GBP","DAX","XAU/USD"]
-  },
-  {
-    id:"aud-cpi",
+    description:"Bank of Canada Governor Tiff Macklem speaks on economic outlook and policy direction. His comments can create volatility in the CAD as traders anticipate future rate moves.",
+    forecast:"N/A",
+    datetime:"2025-11-03T18:30:00Z",
+    affectedPairs:["USD/CAD","EUR/CAD","GBP/CAD","CAD/JPY","XAU/CAD"]
+},
+{
+    id:"aud-cash-rate",
     currency:"AUD",
     flag:"",
-    event:"Quarterly CPI Report",
+    event:"Cash Rate",
     impact:"High",
-    description:"Measures quarterly change in prices of goods and services purchased by consumers.",
-    forecast:"2.1%",
-    datetime:"2025-11-10T00:30:00Z",
-    affectedPairs:["AUD/USD","AUD/JPY","AUD/NZD","XAU/USD"]
-  }
+    description:"The Reserve Bank of Australia announces its benchmark interest rate. A higher rate typically strengthens AUD, while a cut can weaken it.",
+    forecast:"3.60%",
+    datetime:"2025-11-04T03:30:00Z",
+    affectedPairs:["AUD/USD","EUR/AUD","GBP/AUD","AUD/JPY","XAU/AUD"]
+},
+
+{
+    id:"aud-monetary-policy",
+    currency:"AUD",
+    flag:"",
+    event:"RBA Monetary Policy Statement",
+    impact:"High",
+    description:"Provides detailed insight into the RBA’s economic outlook and policy stance. Traders use it to gauge future interest rate direction.",
+    forecast:"N/A",
+    datetime:"2025-11-04T03:30:00Z",
+    affectedPairs:["AUD/USD","EUR/AUD","GBP/AUD","AUD/JPY","XAU/AUD"]
+},
+
+{
+    id:"aud-rate-statement",
+    currency:"AUD",
+    flag:"",
+    event:"RBA Rate Statement",
+    impact:"High",
+    description:"Accompanies the RBA’s interest rate decision and explains the reasons behind it. It offers clues on future policy moves and market sentiment.",
+    forecast:"N/A",
+    datetime:"2025-11-04T03:30:00Z",
+    affectedPairs:["AUD/USD","EUR/AUD","GBP/AUD","AUD/JPY","XAU/AUD"]
+},
+
+{
+    id:"aud-press-conference",
+    currency:"AUD",
+    flag:"",
+    event:"RBA Press Conference",
+    impact:"High",
+    description:"RBA officials hold a press briefing about the monetary policy decision. Statements made here can trigger strong volatility in the AUD.",
+    forecast:"N/A",
+    datetime:"2025-11-04T04:30:00Z",
+    affectedPairs:["AUD/USD","EUR/AUD","GBP/AUD","AUD/JPY","XAU/AUD"]
+},
+
+{
+    id:"nzd-employment-change",
+    currency:"NZD",
+    flag:"",
+    event:"Employment Change q/q",
+    impact:"High",
+    description:"Measures the quarterly change in the number of employed people in New Zealand. Strong growth supports NZD, while weak data can pressure it lower.",
+    forecast:"0.1%",
+    datetime:"2025-11-04T21:45:00Z",
+    affectedPairs:["NZD/USD","EUR/NZD","GBP/NZD","AUD/NZD","NZD/JPY"]
+},
+
+{
+    id:"nzd-unemployment-rate",
+    currency:"NZD",
+    flag:"",
+    event:"Unemployment Rate",
+    impact:"High",
+    description:"Shows the percentage of the labor force that is unemployed and actively seeking work. A lower rate is bullish for NZD, while a higher rate is bearish.",
+    forecast:"5.3%",
+    datetime:"2025-11-04T21:45:00Z",
+    affectedPairs:["NZD/USD","EUR/NZD","GBP/NZD","AUD/NZD","NZD/JPY"]
+},
+{
+    id:"usd-adp-employment",
+    currency:"USD",
+    flag:"",
+    event:"ADP Non-Farm Employment Change",
+    impact:"High",
+    description:"Estimates the monthly change in private sector employment in the U.S. Strong job growth supports USD, while weaker data may pressure it lower.",
+    forecast:"31K",
+    datetime:"2025-11-05T13:15:00Z",
+    affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
+},
+
+{
+    id:"usd-ism-services-pmi",
+    currency:"USD",
+    flag:"",
+    event:"ISM Services PMI",
+    impact:"High",
+    description:"Measures business activity in the U.S. services sector. A reading above 50 signals expansion, while below 50 shows contraction.",
+    forecast:"50.7",
+    datetime:"2025-11-05T15:00:00Z",
+    affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
+},
+{
+    id:"gbp-boe-mpr",
+    currency:"GBP",
+    flag:"",
+    event:"BOE Monetary Policy Report",
+    impact:"High",
+    description:"Provides an in-depth analysis of the UK economy and outlook. Traders use it to anticipate future interest rate decisions.",
+    forecast:"N/A",
+    datetime:"2025-11-06T12:00:00Z",
+    affectedPairs:["GBP/USD","EUR/GBP","GBP/JPY","GBP/AUD","GBP/CAD"]
+},
+
+{
+    id:"gbp-monetary-summary",
+    currency:"GBP",
+    flag:"",
+    event:"Monetary Policy Summary",
+    impact:"High",
+    description:"Summarizes the Bank of England's current policy stance and reasoning. It guides markets on expected monetary policy direction.",
+    forecast:"N/A",
+    datetime:"2025-11-06T12:00:00Z",
+    affectedPairs:["GBP/USD","EUR/GBP","GBP/JPY","GBP/AUD","GBP/CAD"]
+},
+
+{
+    id:"gbp-mpc-votes",
+    currency:"GBP",
+    flag:"",
+    event:"MPC Official Bank Rate Votes",
+    impact:"High",
+    description:"Shows how each Monetary Policy Committee member voted on interest rates. Differences in votes indicate potential policy changes in future meetings.",
+    forecast:"0-3-6",
+    datetime:"2025-11-06T12:00:00Z",
+    affectedPairs:["GBP/USD","EUR/GBP","GBP/JPY","GBP/AUD","GBP/CAD"]
+},
+
+{
+    id:"gbp-official-bank-rate",
+    currency:"GBP",
+    flag:"",
+    event:"Official Bank Rate",
+    impact:"High",
+    description:"The Bank of England sets the official interest rate for borrowing and lending. Higher rates usually strengthen GBP, while cuts can weaken it.",
+    forecast:"4.00%",
+    datetime:"2025-11-06T12:00:00Z",
+    affectedPairs:["GBP/USD","EUR/GBP","GBP/JPY","GBP/AUD","GBP/CAD"]
+},
+
+{
+    id:"gbp-boe-bailey-speech",
+    currency:"GBP",
+    flag:"",
+    event:"BOE Gov Bailey Speaks",
+    impact:"High",
+    description:"Governor Bailey delivers remarks on economic conditions and monetary policy. His comments can create volatility in GBP markets.",
+    forecast:"N/A",
+    datetime:"2025-11-06T12:30:00Z",
+    affectedPairs:["GBP/USD","EUR/GBP","GBP/JPY","GBP/AUD","GBP/CAD"]
+},
+{
+    id:"cad-employment-change",
+    currency:"CAD",
+    flag:"",
+    event:"Employment Change",
+    impact:"High",
+    description:"Measures the monthly change in the number of employed people in Canada. Positive growth supports CAD, while a decline can weaken it.",
+    forecast:"-5.0K",
+    datetime:"2025-11-07T15:30:00Z",
+    affectedPairs:["USD/CAD","EUR/CAD","GBP/CAD","CAD/JPY","XAU/CAD"]
+},
+
+{
+    id:"cad-unemployment-rate",
+    currency:"CAD",
+    flag:"",
+    event:"Unemployment Rate",
+    impact:"High",
+    description:"Shows the percentage of the Canadian labor force that is unemployed. A higher rate is bearish for CAD, while a lower rate is bullish.",
+    forecast:"7.1%",
+    datetime:"2025-11-07T15:30:00Z",
+    affectedPairs:["USD/CAD","EUR/CAD","GBP/CAD","CAD/JPY","XAU/CAD"]
+},
+
+{
+    id:"usd-hourly-earnings",
+    currency:"USD",
+    flag:"",
+    event:"Average Hourly Earnings m/m",
+    impact:"High",
+    description:"Measures the change in the cost of labor per hour in the U.S. Higher wages can signal inflation and support USD.",
+    forecast:"N/A",
+    datetime:"2025-11-07T--:--:00Z",
+    affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
+},
+
+{
+    id:"usd-nonfarm-change",
+    currency:"USD",
+    flag:"",
+    event:"Non-Farm Employment Change",
+    impact:"High",
+    description:"Shows the monthly change in U.S. non-farm payrolls. Strong job growth boosts USD, while weak data can weaken it.",
+    forecast:"N/A",
+    datetime:"2025-11-07T--:--:00Z",
+    affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
+},
+
+{
+    id:"usd-unemployment-rate",
+    currency:"USD",
+    flag:"",
+    event:"Unemployment Rate",
+    impact:"High",
+    description:"Indicates the percentage of the U.S. labor force that is unemployed. A lower rate is bullish for USD, while a higher rate is bearish.",
+    forecast:"N/A",
+    datetime:"2025-11-07T--:--:00Z",
+    affectedPairs:["EUR/USD","GBP/USD","USD/JPY","XAU/USD","NASDAQ"]
+},
+
 ];
 
 const grid=document.getElementById("newsGrid");
@@ -1343,6 +1556,7 @@ slider.addEventListener("mousemove", (e) => {
 
 </body>
 </html>
+
 
 
 
